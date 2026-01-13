@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Registered Student Details</h2>
+
+<table border="1">
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Gender</th>
+<th>Course</th>
+</tr>
+<tr>
+<td id="fn"></td>
+<td id="ln"></td>
+<td id="em"></td>
+<td id="ph"></td>
+<td id="ge"></td>
+<td id="co"></td>
+</tr>
+</table>
+
+<script>
+document.getElementById("fn").innerText = localStorage.getItem("firstName");
+document.getElementById("ln").innerText = localStorage.getItem("lastName");
+document.getElementById("em").innerText = localStorage.getItem("email");
+document.getElementById("ph").innerText = localStorage.getItem("phone");
+document.getElementById("ge").innerText = localStorage.getItem("gender");
+document.getElementById("co").innerText = localStorage.getItem("course");
+</script>
+
+</body>
+</html>

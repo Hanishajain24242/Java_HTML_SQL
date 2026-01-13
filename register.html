@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration</title>
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="saveStudent(); return false;">
+First Name: <input type="text" id="firstName" required maxlength="20"><br><br>
+Last Name: <input type="text" id="lastName" required maxlength="20"><br><br>
+Email: <input type="email" id="email" required><br><br>
+Phone: <input type="text" id="phone" required maxlength="10"><br><br>
+
+Gender:
+<input type="radio" name="gender" value="Male" required> Male
+<input type="radio" name="gender" value="Female"> Female<br><br>
+
+Course:
+<select id="course" required>
+<option>Science</option>
+<option>Commerce</option>
+<option>Arts</option>
+</select><br><br>
+
+<input type="submit" value="Register">
+</form>
+
+<script>
+function saveStudent() {
+    localStorage.setItem("firstName", document.getElementById("firstName").value);
+    localStorage.setItem("lastName", document.getElementById("lastName").value);
+    localStorage.setItem("email", document.getElementById("email").value);
+    localStorage.setItem("phone", document.getElementById("phone").value);
+
+    let gender = document.querySelector('input[name="gender"]:checked').value;
+    localStorage.setItem("gender", gender);
+
+    localStorage.setItem("course", document.getElementById("course").value);
+
+    window.location.href = "view_students.html";
+}
+</script>
+
+</body>
+</html>
